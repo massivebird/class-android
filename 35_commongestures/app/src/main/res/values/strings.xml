@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Common Gestures</string>
+    <string name="gesture_idle_string">Awaiting a gesture...</string>
+</resources>
