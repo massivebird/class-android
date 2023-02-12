@@ -3,4 +3,6 @@
     <string name="button_calc_tip">Calculate Tip</string>
     <string name="input_hint_bill">Enter Bill Total</string>
     <string name="tip_text_notice">Tip amounts will appear here</string>
+    <string name="illegal_input_response">Please enter a nonzero bill amount.</string>
+    <string name="expected_output">The tips are as follows</string>
 </resources>

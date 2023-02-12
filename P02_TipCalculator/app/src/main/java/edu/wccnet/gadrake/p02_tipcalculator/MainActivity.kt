@@ -2,9 +2,7 @@ package edu.wccnet.gadrake.p02_tipcalculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.text.isDigitsOnly
 import edu.wccnet.gadrake.p02_tipcalculator.databinding.ActivityMainBinding
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -14,17 +12,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener {
-            // TODO: exclude decimal points only and/or n > 1 decimals too ??
-            if (binding.billInput.text == null) {
-                binding.outputView.text = "Please enter a nonzero bill amount."
+            // textview [numeric] input type guarantees non-empty input is numerically valid
+            if (binding.billInput.text.isEmpty()) {
+                binding.outputView.text = getString(R.string.illegal_input_response)
             }
             else {
-                val BILL_INPUT: Double = binding.billInput.text.toString().toDouble()
-//            binding.outputView.text = "The tips are as follows:\n" +
-                binding.outputView.text = "The tips are as follows:\n" +
-                "\n10% = $" + printTotalPlusTipPercentage(BILL_INPUT, 10.0) +
-                "\n15% = $" + printTotalPlusTipPercentage(BILL_INPUT, 15.0) +
-                "\n20% = $" + printTotalPlusTipPercentage(BILL_INPUT, 20.0)
+                val userInputtedBill: Double = binding.billInput.text.toString().toDouble()
+                val output = "The tips are as follows:\n" +
+                        "\n10% = $" + printTotalPlusTipPercentage(userInputtedBill, 10.0) +
+                        "\n15% = $" + printTotalPlusTipPercentage(userInputtedBill, 15.0) +
+                        "\n20% = $" + printTotalPlusTipPercentage(userInputtedBill, 20.0)
+            binding.outputView.text = output
             }
         }
     }
