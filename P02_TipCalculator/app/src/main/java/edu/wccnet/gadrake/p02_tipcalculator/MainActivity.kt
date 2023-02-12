@@ -13,16 +13,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             // textview [numeric] input type guarantees non-empty input is numerically valid
-            if (binding.billInput.text.isEmpty()) {
+            val userInputtedBill: Double? = binding.billInput.text.toString().toDoubleOrNull()
+            if (userInputtedBill == null || userInputtedBill == 0.0) {
                 binding.outputView.text = getString(R.string.illegal_input_response)
             }
             else {
-                val userInputtedBill: Double = binding.billInput.text.toString().toDouble()
                 val output = "The tips are as follows:\n" +
                         "\n10% = $" + printTotalPlusTipPercentage(userInputtedBill, 10.0) +
                         "\n15% = $" + printTotalPlusTipPercentage(userInputtedBill, 15.0) +
                         "\n20% = $" + printTotalPlusTipPercentage(userInputtedBill, 20.0)
-            binding.outputView.text = output
+                binding.outputView.text = output
             }
         }
     }
