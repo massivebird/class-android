@@ -8,12 +8,12 @@ android {
         viewBinding true
     }
     namespace 'edu.wccnet.gadrake.p03_namesavedataproject'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "edu.wccnet.gadrake.p03_namesavedataproject"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
