@@ -4,6 +4,9 @@ plugins {
 }
 
 android {
+    buildFeatures {
+        viewBinding true
+    }
     namespace 'edu.wccnet.gadrake.p03_namesavedataproject'
     compileSdk 32
 

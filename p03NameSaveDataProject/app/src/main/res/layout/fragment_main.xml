@@ -8,7 +8,7 @@
     tools:context=".ui.main.MainFragment">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/nameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -19,16 +19,16 @@
         tools:layout_editor_absoluteY="102dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addNameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Add Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="190dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/namesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
