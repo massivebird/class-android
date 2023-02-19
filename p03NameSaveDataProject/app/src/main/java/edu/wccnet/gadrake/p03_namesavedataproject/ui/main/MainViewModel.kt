@@ -7,7 +7,6 @@ class MainViewModel : ViewModel() {
     private var allNames: String = ""
 
     fun addNameToList(name: String) {
-        // TODO: this works?
         allNames += if (allNames.isEmpty()) name
         else "\n" + name
     }

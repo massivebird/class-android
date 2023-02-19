@@ -42,8 +42,6 @@ class MainFragment : Fragment() {
             if (binding.nameInput.text.isNotEmpty()) {
                 viewModel.addNameToList(binding.nameInput.text.toString())
                 binding.namesText.text = viewModel.getNames()
-            } else {
-                binding.namesText.text = "No Value"
             }
         }
     }
