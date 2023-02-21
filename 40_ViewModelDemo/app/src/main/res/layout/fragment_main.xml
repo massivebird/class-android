@@ -7,44 +7,40 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
-    <EditText
-        android:id="@+id/nameInput"
+    <TextView
+        android:id="@+id/resultText"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:hint="@string/name_input_hint"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:layout_height="wrap_content"
+        android:text="@string/mainfragment"
+        app:layout_constraintBottom_toTopOf="@+id/convertButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="Name" />
+        app:layout_constraintTop_toBottomOf="@+id/dollarText" />
 
     <Button
-        android:id="@+id/addNameButton"
+        android:id="@+id/convertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-<<<<<<< Updated upstream
-        android:text="@string/add_name_button"
-=======
-        android:text="@string/add_name_botton"
->>>>>>> Stashed changes
+        android:text="@string/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/resultText" />
 
-    <TextView
-        android:id="@+id/namesText"
+    <EditText
+        android:id="@+id/dollarText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:width="300dp"
-        android:textSize="20sp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/resultText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addNameButton" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

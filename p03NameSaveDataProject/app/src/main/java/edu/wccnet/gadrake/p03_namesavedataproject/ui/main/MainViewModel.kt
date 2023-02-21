@@ -7,6 +7,10 @@ class MainViewModel : ViewModel() {
     private var allNames: String = ""
 
     fun addNameToList(name: String) {
+<<<<<<< Updated upstream
+=======
+        // TODO: this works?
+>>>>>>> Stashed changes
         allNames += if (allNames.isEmpty()) name
         else "\n" + name
     }
