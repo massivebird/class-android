@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- declares new variable myViewModel -->
+    <data>
+        <variable
+            name="myViewModel"
+            type="edu.wccnet.gadrake.p04_namesavedataproject2.ui.main.MainViewModel"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.MainFragment">
+
+        <EditText
+            android:id="@+id/nameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="48dp"
+            android:ems="10"
+            android:hint="@string/name_input_hint"
+            android:text="@={myViewModel.nameInput}"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="Name" />
+
+        <Button
+            android:id="@+id/addNameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="@string/add_name_button"
+            android:onClick="@{() -> myViewModel.addNameToList()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameInput" />
+
+        <TextView
+            android:id="@+id/namesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{myViewModel.allNames == null ? "No names to display" :  myViewModel.allNames }'
+            android:layout_marginTop="48dp"
+            android:width="300dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addNameButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
