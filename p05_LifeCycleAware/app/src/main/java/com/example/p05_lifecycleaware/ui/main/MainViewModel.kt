@@ -6,15 +6,24 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class MainViewModel : ViewModel() {
-    var output: MutableLiveData<String> = MutableLiveData()
 
-    fun addLifecycleOutputLine(stateFunction: String) {
-        val currentTime = SimpleDateFormat("hh:mm:s").format(Calendar.getInstance().time)
-        val newOutputLine = "$stateFunction was fired " + currentTime
-        if (output.value == null) {
-            output.value = newOutputLine
-        } else {
-            output.value += "\n" + newOutputLine
+    companion object {
+        var output: MutableLiveData<String> = MutableLiveData()
+
+        fun addLifecycleOutputLine(stateFunction: String, endOfSet: Boolean) {
+
+            val currentTime = SimpleDateFormat("hh:mm:ss.SSS").format(Calendar.getInstance().time)
+            val newOutputLine = "$stateFunction was fired on " + currentTime
+
+            if (output.value == null) {
+                output.value = newOutputLine
+            } else {
+                output.value += "\n" + newOutputLine
+            }
+
+            if (endOfSet) output.value += "\n*****"
+
         }
     }
+
 }
