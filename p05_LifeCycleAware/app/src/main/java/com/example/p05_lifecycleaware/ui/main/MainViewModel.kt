@@ -12,8 +12,8 @@ class MainViewModel : ViewModel() {
 
         fun addLifecycleOutputLine(stateFunction: String, endOfSet: Boolean) {
 
-            val currentTime = SimpleDateFormat("hh:mm:ss.SSS").format(Calendar.getInstance().time)
-            val newOutputLine = "$stateFunction was fired on " + currentTime
+            val currentTime = SimpleDateFormat("hh:mm:ss.SSS", Locale("EST")).format(Calendar.getInstance().time)
+            val newOutputLine = String.format("%-9s was fired on %s", stateFunction, currentTime)
 
             if (output.value == null) {
                 output.value = newOutputLine

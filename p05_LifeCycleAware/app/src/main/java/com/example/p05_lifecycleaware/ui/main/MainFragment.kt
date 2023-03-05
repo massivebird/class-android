@@ -33,9 +33,4 @@ class MainFragment : Fragment() {
         binding.lifecycleOwner = this
         return binding.root
     }
-
-    fun doWhat() {
-
-    }
-
 }
