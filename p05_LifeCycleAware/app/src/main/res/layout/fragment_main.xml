@@ -20,6 +20,7 @@
             android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:ellipsize="end"
             android:fontFamily="monospace"
             android:isScrollContainer="false"
             android:text='@{myViewModel.output == null ? "No events to display" :  myViewModel.output }'
