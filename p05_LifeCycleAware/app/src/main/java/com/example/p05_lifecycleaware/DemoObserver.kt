@@ -1,39 +1,39 @@
 package com.example.p05_lifecycleaware
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.example.p05_lifecycleaware.ui.main.MainViewModel
 
-class DemoObserver: LifecycleObserver {
+class DemoObserver: DefaultLifecycleObserver {
 
     private val viewModel = MainViewModel.Companion
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    fun onResume() {
+    override fun onResume(owner: LifecycleOwner) {
+        super.onResume(owner)
         viewModel.addLifecycleOutputLine("onResume", true)
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    fun onPause() {
+    override fun onPause(owner: LifecycleOwner) {
+        super.onPause(owner)
         viewModel.addLifecycleOutputLine("onPause", true)
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun onCreate() {
+    override fun onCreate(owner: LifecycleOwner) {
+        super.onCreate(owner)
         viewModel.addLifecycleOutputLine("onCreate", false)
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onStart() {
+    override fun onStart(owner: LifecycleOwner) {
+        super.onStart(owner)
         viewModel.addLifecycleOutputLine("onStart", false)
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun onStop() {
+    override fun onStop(owner: LifecycleOwner) {
+        super.onStop(owner)
         viewModel.addLifecycleOutputLine("onStop", false)
     }
 
-    fun onDestroy() {
+    override fun onDestroy(owner: LifecycleOwner) {
+        super.onDestroy(owner)
         viewModel.addLifecycleOutputLine("onDestroy", true)
     }
 
